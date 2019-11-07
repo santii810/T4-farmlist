@@ -9,8 +9,7 @@ villages = find_villages(setup_values.vill14_coords)
 #     print(i)
 
 lid_queue = create(setup_values.lids)
-attacks = create_attack_list(villages, setup_values.troops, lid_queue)
+attacks = create_attack_list(villages, setup_values.troops, lid_queue, setup_values.tp)
 for i in attacks:
     print(i)
-
 print(len(attacks))

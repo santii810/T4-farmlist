@@ -11,7 +11,7 @@ def remove_dipls(reference, removable):
 
 
 def find_villages(initial_coords):
-    radius = 20
+    radius = 100
     normal_villages = get_farm_villages(initial_coords, radius, False)
     natare_villages = get_farm_villages(initial_coords, radius, True)
     natare_villages = remove_dipls(normal_villages, natare_villages)
