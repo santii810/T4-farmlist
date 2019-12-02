@@ -1,4 +1,5 @@
 from src.utils import calculator, setup_values
+from src.utils.calculator import calcular_tiempo
 
 
 class Village:
@@ -54,3 +55,8 @@ class Village:
 
     def __lt__(self, other):
         return self.dist < other.dist
+
+
+    def to_gsheet(self):
+        return [self.x, self.y, self.natare, self.dist]
+

@@ -1,30 +1,9 @@
+from src.utils.set_utils import union
+from src.utils.set_utils import remove_dipls
 from src.components.troptool import get_farm_villages
 
 
-def remove_dipls(reference, removable):
-    for i in reference:
-        for j in removable:
-            if i == j:
-                removable.remove(j)
-                break
-    return removable
-
-
-def union(toret, otro):
-    for i in otro:
-        is_diferent = True
-        for j in toret:
-            if j == i:
-                is_diferent = False
-                break
-        if is_diferent:
-            toret.add(i)
-    return toret
-
-
-def find_villages(initial_coords):
-    radius = 100
-    dispersion = 30
+def find_villages_ext(initial_coords, radius, dispersion):
     all_villages = find_villages_extended(initial_coords, radius)
     extended_coords = [[initial_coords[0] + dispersion, initial_coords[1]],
                        [initial_coords[0] - dispersion, initial_coords[1]],

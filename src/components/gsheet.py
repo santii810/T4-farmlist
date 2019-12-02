@@ -1,5 +1,7 @@
 import gspread
+from gspread.models import Cell
 from oauth2client.service_account import ServiceAccountCredentials
+from src.models.attack import Attack
 import pprint
 
 
@@ -16,7 +18,16 @@ def create_sheet():
 # pp.pprint(sheet_records)
 
 
-def insert_into_sheet(rows):
+def parse_to_google_format(toInsert):
+    cells = []
+    for i in range(len(toInsert)):
+        for j in range(len(toInsert[i].to_gsheet())):
+            cells.append(Cell(i + 1, j + 1, toInsert[i].to_gsheet()[j]))
+    return cells
+
+
+def insert_into_sheet(toInsert):
     sheet = create_sheet()
-    for i in range(len(rows)):
-        sheet.insert_row(rows[i], i)
+    cells = parse_to_google_format(toInsert)
+    print(cells)
+    sheet.update_cells(cells)

@@ -17,8 +17,8 @@ class Attack:
         return self.__village
 
     @village.setter
-    def age(self, village):
-        self.__village = village @ property
+    def village(self, village):
+        self.__village = village
 
     @property
     def troops(self):
@@ -30,3 +30,6 @@ class Attack:
 
     def __str__(self):
         return f"sendRequest({self.village.x}, {self.village.y}, {self.lid}, {self.troops});"
+
+    def to_gsheet(self):
+        return [self.village.x, self.village.y, self.village.natare, self.village.dist, str(self.troops)]

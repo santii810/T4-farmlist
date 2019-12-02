@@ -1,6 +1,6 @@
 vill14_coords = [-41, 24]
-lids = {'imperat': [4658, 4556, 4558, 4559, 4561],
-                 'imperan': [4562, 4563, 4564]}
+lids = {'imperat': [5004, 5005, 5006, 5007, 5008],
+        'imperan': [5009, 5010, 5011]}
 tp = 5
 
 troops = {'imperat_normal': [0, 0, 0, 0, 2, 0],
